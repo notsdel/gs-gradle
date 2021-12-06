@@ -1,5 +1,5 @@
 node {
-  def myGradleContainer = docker.image('gradle:bashed')
+  def myGradleContainer = docker.image('sdel/gradle:bashed')
   myGradleContainer.pull()
   stage('prep') {
     checkout scm
