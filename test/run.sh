@@ -2,7 +2,7 @@
 cd $(dirname $0)
 
 cd ../complete
-./gradlew build
+./gradle build
 ret=$?
 if [ $ret -ne 0 ]; then
   exit $ret
@@ -10,14 +10,14 @@ fi
 rm -rf build
 
 cd ../initial
-../complete/gradlew -b ../initial/build.gradle wrapper
-./gradlew compileJava
+../complete/gradle -b ../initial/build.gradle wrapper
+./gradle compileJava
 ret=$?
 if [ $ret -ne 0 ]; then
   exit $ret
 fi
 rm -rf build
 rm -rf gradle
-rm gradlew*
+rm gradle*
 
 exit
